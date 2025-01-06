@@ -1,0 +1,1 @@
+export type RhfFieldOmit = "name" | "onBlur" | "onChange" | "ref" | "value";

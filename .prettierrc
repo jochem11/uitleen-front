@@ -1,0 +1,22 @@
+{
+  "endOfLine": "crlf",
+  "trailingComma": "all",
+  "tabWidth": 2,
+  "semi": true,
+  "printWidth": 120,
+  "bracketSpacing": true,
+  "overrides": [
+    {
+      "files": "./src/constants/*.ts",
+      "options": {
+        "printWidth": 9999
+      }
+    },
+    {
+      "files": "./src/Routes.tsx",
+      "options": {
+        "printWidth": 9999
+      }
+    }
+  ]
+}
