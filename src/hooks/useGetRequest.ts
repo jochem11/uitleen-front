@@ -14,7 +14,7 @@ const buildUrlWithParams = (url: string, params?: Record<string, string | number
   return urlObj.toString();
 };
 
-const useFetch = <T>(
+const useGetRequest = <T>(
   url: string,
   queryParams?: Record<string, string | number | boolean>,
 ): {
@@ -67,5 +67,5 @@ const useFetch = <T>(
   return { data, isLoading, isCompleted, error };
 };
 
-export default useFetch;
+export default useGetRequest;
 

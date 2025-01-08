@@ -11,7 +11,7 @@ import {
   Paper,
   CircularProgress,
 } from "@mui/material";
-import useFetch from "../../../hooks/useFetch";
+import useGetRequest from "../../../hooks/useGetRequest";
 import { Column } from "../../../types/data-table/Column";
 import { PagedResponse } from "../../../types/responses/PagedResponse";
 
@@ -39,7 +39,7 @@ function DataTable<T extends object>({
   const [sortBy, setSortBy] = useState(defaultSortBy);
   const [sortDir, setSortDir] = useState<"asc" | "desc">(defaultSortDir);
 
-  const { data, isLoading, error } = useFetch<PagedResponse<T>>(url, {
+  const { data, isLoading, error } = useGetRequest<PagedResponse<T>>(url, {
     page,
     size: rowsPerPage,
     sortBy,
