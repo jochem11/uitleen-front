@@ -8,12 +8,14 @@ const testPage = () => {
 };
 
 const ItemsPage = lazy(() => import("./pages/ItemsPage"));
+const TestPage = lazy(() => import("./pages/TestPage"));
 
 function AuthenticatedLayoutRoutes() {
   return (
     <Switch>
       <ApplicationRoute path="/" component={testPage} />
       <ApplicationRoute path="/items" component={ItemsPage} />
+      <ApplicationRoute path="/test" component={TestPage} />
     </Switch>
   );
 }
@@ -26,3 +28,4 @@ const Routes = () => {
 };
 
 export default Routes;
+
