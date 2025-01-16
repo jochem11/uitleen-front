@@ -1,1 +1,4 @@
 export const TEST_DIALOG = "test";
+export const ITEM_CREATE_DIALOG = "ITEM_CREATE_DIALOG";
+export const ITEM_DELETE_DIALOG = "ITEM_DELETE_DIALOG";
+export const ITEM_EDIT_DIALOG = "ITEM_EDIT_DIALOG";

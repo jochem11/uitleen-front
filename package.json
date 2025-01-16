@@ -25,6 +25,7 @@
     "react-helmet-async": "^2.0.5",
     "react-hook-form": "^7.54.2",
     "react-intl": "^7.0.4",
+    "react-toastify": "^11.0.3",
     "sass": "^1.83.0",
     "wouter": "^3.3.5",
     "yup": "^1.6.1"

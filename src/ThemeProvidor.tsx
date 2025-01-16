@@ -273,79 +273,79 @@ const ThemeProvider = ({ children }: PropsWithChildren) => {
                 },
               },
             },
-            MuiInputBase: {
-              defaultProps: {
-                margin: "dense",
-                size: "medium",
-              },
-              styleOverrides: {
-                root: {
-                  fontSize: 12,
-                },
-              },
-            },
-            MuiFormLabel: {
-              styleOverrides: {
-                root: {
-                  fontSize: 12,
-                },
-              },
-            },
-            MuiSelect: {
-              styleOverrides: {
-                select: {
-                  fontSize: 12,
-                  paddingTop: 6,
-                  paddingBottom: 6,
+            // MuiInputBase: {
+            //   defaultProps: {
+            //     margin: "dense",
+            //     size: "medium",
+            //   },
+            //   styleOverrides: {
+            //     root: {
+            //       fontSize: 12,
+            //     },
+            //   },
+            // },
+            // MuiFormLabel: {
+            //   styleOverrides: {
+            //     root: {
+            //       fontSize: 12,
+            //     },
+            //   },
+            // },
+            // MuiSelect: {
+            //   styleOverrides: {
+            //     select: {
+            //       fontSize: 12,
+            //       paddingTop: 6,
+            //       paddingBottom: 6,
 
-                  "& label": {
-                    fontSize: 12,
-                  },
-                },
-              },
-            },
-            MuiFormControl: {
-              defaultProps: {
-                variant: "outlined",
-                fullWidth: true,
-                size: "medium",
-              },
-              styleOverrides: {
-                root: {
-                  "& svg": {
-                    marginTop: 2,
-                    maxWidth: 18,
-                    maxHeight: 18,
-                  },
-                  "& input": {
-                    fontSize: 12,
-                    paddingTop: 8,
-                    paddingBottom: 8,
-                  },
-                  "& label": {
-                    marginTop: -2,
-                    fontSize: 12,
-                  },
-                  "& textarea": {
-                    fontSize: 12,
-                    marginTop: -3,
-                    marginBottom: -3,
-                  },
-                },
-              },
-            },
-            MuiFormControlLabel: {
-              styleOverrides: {
-                root: {
-                  "& span": {
-                    fontSize: 12,
-                  },
-                },
-                label: {
-                  fontSize: 12,
-                },
-              },
-            },
+            //       "& label": {
+            //         fontSize: 12,
+            //       },
+            //     },
+            //   },
+            // },
+            // MuiFormControl: {
+            //   defaultProps: {
+            //     variant: "outlined",
+            //     fullWidth: true,
+            //     size: "medium",
+            //   },
+            //   styleOverrides: {
+            //     root: {
+            //       "& svg": {
+            //         marginTop: 2,
+            //         maxWidth: 18,
+            //         maxHeight: 18,
+            //       },
+            //       "& input": {
+            //         fontSize: 12,
+            //         paddingTop: 8,
+            //         paddingBottom: 8,
+            //       },
+            //       "& label": {
+            //         marginTop: -2,
+            //         fontSize: 12,
+            //       },
+            //       "& textarea": {
+            //         fontSize: 12,
+            //         marginTop: -3,
+            //         marginBottom: -3,
+            //       },
+            //     },
+            //   },
+            // },
+            // MuiFormControlLabel: {
+            //   styleOverrides: {
+            //     root: {
+            //       "& span": {
+            //         fontSize: 12,
+            //       },
+            //     },
+            //     label: {
+            //       fontSize: 12,
+            //     },
+            //   },
+            // },
             MuiAutocomplete: {
               defaultProps: {
                 size: "medium",
@@ -366,15 +366,7 @@ const ThemeProvider = ({ children }: PropsWithChildren) => {
               defaultProps: {
                 variant: "outlined",
                 fullWidth: true,
-                size: "medium",
-              },
-              styleOverrides: {
-                root: {
-                  "& input": {
-                    paddingTop: 6,
-                    paddingBottom: 6,
-                  },
-                },
+                size: "small",
               },
             },
             MuiSwitch: {

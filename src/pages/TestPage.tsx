@@ -1,19 +1,26 @@
 import { Button } from "@mui/material";
 import Layout from "../layouts/Layout";
 import WrappedTestDialog from "../components/test/dialog/Dialog";
-import useDialog from "../hooks/useDialog";
-import { TEST_DIALOG } from "../constants/dialogInstances";
+import { toast } from "react-toastify";
+// import { useSnackbar } from "notistack";
 
 const TestPage = () => {
-  const dialogMethods = useDialog(TEST_DIALOG);
+  //   const dialogMethods = useDialog(TEST_DIALOG);
+
+  // const {enqueueSnackbar} = useSnackbar();
 
   return (
     <Layout>
-      <Button onClick={() => dialogMethods.open()}>aefa</Button>
+      <Button
+        onClick={() => {
+          toast.success("aaa");
+        }}
+      >
+        aefa
+      </Button>
       <WrappedTestDialog />
     </Layout>
   );
 };
 
 export default TestPage;
-

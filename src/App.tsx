@@ -4,6 +4,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { IntlProvider } from "react-intl";
 import Routes from "./Routes";
 import ThemeProvider from "./ThemeProvidor";
+import ToastProvider from "./ToastProvider";
 
 function App() {
   return (
@@ -11,10 +12,11 @@ function App() {
       <StyledEngineProvider injectFirst>
         <ThemeProvider>
           <LocalizationProvider>
-            {/*snackbarProvider? */}
-            <HelmetProvider>
-              <Routes />
-            </HelmetProvider>
+            <ToastProvider>
+              <HelmetProvider>
+                <Routes />
+              </HelmetProvider>
+            </ToastProvider>
           </LocalizationProvider>
         </ThemeProvider>
       </StyledEngineProvider>

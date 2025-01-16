@@ -15,7 +15,6 @@ import useGetRequest from "../../../hooks/useGetRequest";
 import { Column } from "../../../types/data-table/Column";
 import { PagedResponse } from "../../../types/responses/PagedResponse";
 
-
 type DataTableProps<T> = {
   columns: Column<T>[];
   title?: string;
@@ -25,15 +24,14 @@ type DataTableProps<T> = {
   defaultRowsPerPage?: number;
 };
 
-
-function DataTable<T extends object>({
+const DataTable = <T extends object>({
   columns,
   title,
   url,
   defaultSortBy = "id",
   defaultSortDir = "asc",
   defaultRowsPerPage = 20,
-}: DataTableProps<T>) {
+}: DataTableProps<T>) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(defaultRowsPerPage);
   const [sortBy, setSortBy] = useState(defaultSortBy);
@@ -119,6 +117,6 @@ function DataTable<T extends object>({
       />
     </Paper>
   );
-}
+};
 
 export default DataTable;

@@ -28,7 +28,6 @@ type UseFormInputProps<
   TSchema extends yup.ObjectSchema<any, yup.AnyObject, any, ""> = any
 > = UseFormProps<TFieldValues, TContext> & {
   schema: TSchema;
-  fetchRequest: (data: TFieldValues) => Promise<void>;
   onSubmit?: (data: TFieldValues) => void;
 };
 
@@ -66,7 +65,6 @@ const useForm = <
 
   const onSubmit = formMethods.handleSubmit(async (data) => {
     try {
-      await props.fetchRequest(data);
       props.onSubmit?.(data);
     } catch (error) {
       console.error("Submission error:", error);
