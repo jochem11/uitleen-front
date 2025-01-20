@@ -5,6 +5,7 @@ import FormDialog from "../../common/dialogs/FormDialog";
 import * as yup from "yup";
 import ItemFormFields from "../ItemFormFields";
 import { ITEM_CREATE_DIALOG } from "../../../constants/dialogInstances";
+import { toast } from "react-toastify";
 
 const schema: yup.Schema<createItemRequestModel> = yup.object({
   name: yup.string().required(),
@@ -22,8 +23,21 @@ const CreateItemDialog = ({ dialogMethods }: DialogContainer) => {
       description: "",
       categoryId: 0,
     },
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: async (values) => {
+      try {
+        await fetch(`${import.meta.env.VITE_API_URL}items`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(values),
+        });
+
+        dialogMethods.close();
+        toast.success("Item aangemaakt");
+      } catch (ex) {
+        console.error(ex);
+      }
     },
   });
 

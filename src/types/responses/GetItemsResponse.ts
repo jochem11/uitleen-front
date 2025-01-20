@@ -1,6 +1,7 @@
 export type GetItemsResponse = {
-    name: string;
-    description: string;
-    caterogyId: number;
-    itemStatusId: number;
-}
+  id: number;
+  name: string;
+  description: string;
+  caterogyId: number;
+  itemStatusId: number;
+};

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import {
   Table,
   TableBody,
@@ -10,6 +10,7 @@ import {
   TablePagination,
   Paper,
   CircularProgress,
+  Box,
 } from "@mui/material";
 import useGetRequest from "../../../hooks/useGetRequest";
 import { Column } from "../../../types/data-table/Column";
@@ -22,6 +23,7 @@ type DataTableProps<T> = {
   defaultSortBy?: string;
   defaultSortDir?: "asc" | "desc";
   defaultRowsPerPage?: number;
+  tableActions?: ReactNode;
 };
 
 const DataTable = <T extends object>({
@@ -31,6 +33,7 @@ const DataTable = <T extends object>({
   defaultSortBy = "id",
   defaultSortDir = "asc",
   defaultRowsPerPage = 20,
+  tableActions,
 }: DataTableProps<T>) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(defaultRowsPerPage);
@@ -55,7 +58,10 @@ const DataTable = <T extends object>({
 
   return (
     <Paper>
-      {title && <h2 style={{ textAlign: "center" }}>{title}</h2>}
+      <Box px={2} display="flex" justifyContent="space-between" alignItems="center">
+        {title && <h2 style={{ flex: 1 }}>{title}</h2>}
+        {tableActions} {/* Render the tableActions prop here */}
+      </Box>
       {error && <p style={{ color: "red" }}>Error: {error}</p>}
       <TableContainer>
         <Table>

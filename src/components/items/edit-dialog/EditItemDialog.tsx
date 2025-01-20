@@ -6,8 +6,9 @@ import * as yup from "yup";
 import useForm from "../../../hooks/useForm";
 import ItemFormFields from "../ItemFormFields";
 import { ITEM_EDIT_DIALOG } from "../../../constants/dialogInstances";
+import { toast } from "react-toastify";
 
-export type EditDialogProps = {
+export type EditItemDialogProps = {
   id: number;
   name: string;
   description: string;
@@ -22,7 +23,7 @@ const schema: yup.Schema<editItemRequestModel> = yup.object({
   itemStatusId: yup.number().required(),
 });
 
-const EditDialog = ({ dialogMethods }: DialogContainer<EditDialogProps>) => {
+const EditItemDialog = ({ dialogMethods }: DialogContainer<EditItemDialogProps>) => {
   const formMethods = useForm<editItemRequestModel>({
     schema,
     defaultValues: {
@@ -31,8 +32,21 @@ const EditDialog = ({ dialogMethods }: DialogContainer<EditDialogProps>) => {
       categoryId: dialogMethods.meta.props?.categoryId || 0,
       itemStatusId: dialogMethods.meta.props?.itemStatusId || 0,
     },
-    onSubmit: () => {
-      console.log("");
+    onSubmit: async () => {
+      try {
+        await fetch(`${import.meta.env.VITE_API_URL}items/${dialogMethods.meta.props.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formMethods.getValues()),
+        });
+
+        dialogMethods.close();
+        toast.success("Item gewijzigd");
+      } catch (ex) {
+        console.error(ex);
+      }
     },
   });
 
@@ -43,8 +57,9 @@ const EditDialog = ({ dialogMethods }: DialogContainer<EditDialogProps>) => {
   );
 };
 
-const WrappedEditDialog = () => {
-  return <DialogWrapper instance={ITEM_EDIT_DIALOG} dialogComponent={EditDialog} />;
+const WrappedEditItemDialog = () => {
+  return <DialogWrapper instance={ITEM_EDIT_DIALOG} dialogComponent={EditItemDialog} />;
 };
 
-export default WrappedEditDialog;
+export default WrappedEditItemDialog;
+

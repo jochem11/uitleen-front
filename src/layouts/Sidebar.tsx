@@ -44,12 +44,12 @@ const Sidebar = () => {
             </ListItem>
           </ButtonBase>
 
-          <ButtonBase sx={{ width: "100%" }}>
+          <ButtonBase sx={{ width: "100%" }} onClick={() => setLocation("/users")}>
             <ListItem sx={{ width: "100%" }}>
               <ListItemIcon>
                 <AddIcon />
               </ListItemIcon>
-              <ListItemText primary="Dashboard" />
+              <ListItemText primary="Gebruikers" />
             </ListItem>
           </ButtonBase>
         </List>
