@@ -1,10 +1,11 @@
 import { Box, Drawer, List, ListItem, ListItemIcon, ListItemText, Divider, ButtonBase } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
-import ReplayIcon from "@mui/icons-material/Replay";
-import AddIcon from "@mui/icons-material/Add";
+import EventNoteIcon from "@mui/icons-material/EventNote";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import PersonIcon from "@mui/icons-material/Person";
 import LogoRocNijmegen from "../assets/LogoRocNijmegen.svg";
 import { useLocation } from "wouter";
+import DeviceHubIcon from '@mui/icons-material/DeviceHub';
 
 const Sidebar = () => {
   const [_, setLocation] = useLocation();
@@ -35,10 +36,10 @@ const Sidebar = () => {
             </ListItem>
           </ButtonBase>
 
-          <ButtonBase sx={{ width: "100%" }}  onClick={() => setLocation("/items")}>
+          <ButtonBase sx={{ width: "100%" }} onClick={() => setLocation("/items")}>
             <ListItem sx={{ width: "100%" }}>
               <ListItemIcon>
-                <ReplayIcon />
+                <DeviceHubIcon />
               </ListItemIcon>
               <ListItemText primary="items" />
             </ListItem>
@@ -47,9 +48,18 @@ const Sidebar = () => {
           <ButtonBase sx={{ width: "100%" }} onClick={() => setLocation("/users")}>
             <ListItem sx={{ width: "100%" }}>
               <ListItemIcon>
-                <AddIcon />
+                <PersonIcon />
               </ListItemIcon>
               <ListItemText primary="Gebruikers" />
+            </ListItem>
+          </ButtonBase>
+
+          <ButtonBase sx={{ width: "100%" }} onClick={() => setLocation("/lends")}>
+            <ListItem sx={{ width: "100%" }}>
+              <ListItemIcon>
+                <EventNoteIcon />
+              </ListItemIcon>
+              <ListItemText primary="Uitgiftes" />
             </ListItem>
           </ButtonBase>
         </List>

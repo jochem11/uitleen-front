@@ -9,6 +9,7 @@ const testPage = () => {
 
 const ItemsPage = lazy(() => import("./pages/ItemsPage"));
 const UsersPage = lazy(() => import("./pages/UsersPage"));
+const LendsPage = lazy(() => import("./pages/LendsPage"));
 
 function AuthenticatedLayoutRoutes() {
   return (
@@ -16,6 +17,7 @@ function AuthenticatedLayoutRoutes() {
       <ApplicationRoute path="/" component={testPage} />
       <ApplicationRoute path="/items" component={ItemsPage} />
       <ApplicationRoute path="/users" component={UsersPage} />
+      <ApplicationRoute path="/lends" component={LendsPage} />
     </Switch>
   );
 }

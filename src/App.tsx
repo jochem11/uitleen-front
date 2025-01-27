@@ -5,13 +5,15 @@ import { IntlProvider } from "react-intl";
 import Routes from "./Routes";
 import ThemeProvider from "./ThemeProvidor";
 import ToastProvider from "./ToastProvider";
+import { nl } from "date-fns/locale/nl";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFnsV3";
 
 function App() {
   return (
     <IntlProvider locale="nl" timeZone="Europe/Amsterdam">
       <StyledEngineProvider injectFirst>
         <ThemeProvider>
-          <LocalizationProvider>
+          <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={nl}>
             <ToastProvider>
               <HelmetProvider>
                 <Routes />

@@ -20,8 +20,8 @@ const UsersPage = () => {
     { key: "id", title: "ID" },
     { key: "displayName", title: "Naam" },
     { key: "cardNumber", title: "Kaartnummer" },
-    { key: "groupId", title: "Groep ID" },
-    { key: "courseId", title: "Cursus ID" },
+    { key: "groupId", title: "Klas ID" },
+    { key: "courseId", title: "Opleiding ID" },
     {
       key: null,
       title: "Acties",
