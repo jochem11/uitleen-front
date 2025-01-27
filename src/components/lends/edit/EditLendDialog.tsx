@@ -19,7 +19,7 @@ const schema: yup.Schema<editLendRequestModel> = yup.object({
   accountId: yup.number().required(),
   itemId: yup.number().required(),
   lendDate: yup.date().required(),
-  returnDate: yup.date().required(),
+  returnDate: yup.date().nullable(),
 });
 
 const EditLendDialog = ({ dialogMethods }: DialogContainer<EditLendDialogProps>) => {
@@ -29,11 +29,11 @@ const EditLendDialog = ({ dialogMethods }: DialogContainer<EditLendDialogProps>)
       accountId: dialogMethods.meta.props?.accountId || 0,
       itemId: dialogMethods.meta.props?.itemId || 0,
       lendDate: dialogMethods.meta.props?.lendDate || new Date(),
-      returnDate: dialogMethods.meta.props?.returnDate || new Date(),
+      returnDate: dialogMethods.meta.props?.returnDate || null,
     },
     onSubmit: async (values) => {
       try {
-        await fetch(`${import.meta.env.VITE_API_URL}lends`, {
+        await fetch(`${import.meta.env.VITE_API_URL}lends/${dialogMethods.meta.props?.id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",

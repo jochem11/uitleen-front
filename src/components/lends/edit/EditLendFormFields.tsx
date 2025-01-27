@@ -18,7 +18,7 @@ const EditLendFormFields = ({ control }: EditLendFormFieldProps) => {
         <TextField control={control} name="itemId" label="Item" />
       </Grid2>
       <Grid2 size={12}>
-        <DateTimePicker control={control} name="lendDate" label="Lend date" />
+        <DateTimePicker required control={control} name="lendDate" label="Lend date" />
       </Grid2>
       <Grid2 size={12}>
         <DateTimePicker control={control} name="returnDate" label="Return date" />
