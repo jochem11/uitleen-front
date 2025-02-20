@@ -2,9 +2,8 @@ import {
   DateTimePicker as MuiDateTimePicker,
   DateTimePickerProps as MuiDateTimePickerProps,
   //clock
-  //   renderTimeViewClock,
+    renderTimeViewClock,
 } from "@mui/x-date-pickers";
-import { format } from "date-fns";
 import { FieldValues, useController } from "react-hook-form";
 
 import { CommonOmit } from "../../../types/forms/CommonOmit";
@@ -41,15 +40,12 @@ const DateTimePicker = <T extends FieldValues, TDate extends Date>({
     <MuiDateTimePicker
       {...restField}
       //@ts-ignore
-      value={value ? new Date(value) : null} // Ensure value is a Date object
+      value={value ? new Date(value) : null}
       onChange={(data) => {
         if (data === null) {
           onChange(null);
           return;
         }
-
-        //@ts-ignore
-        onChange(format(data, "yyyy-MM-dd-HH:mm"));
       }}
       inputRef={ref}
       slotProps={{
@@ -64,12 +60,11 @@ const DateTimePicker = <T extends FieldValues, TDate extends Date>({
       }}
       format="dd-MM-yy-HH:mm"
       label={label}
-      //render clock
-      // viewRenderers={{
-      //   hours: renderTimeViewClock,
-      //   minutes: renderTimeViewClock,
-      //   seconds: renderTimeViewClock,
-      // }}
+      viewRenderers={{
+        hours: renderTimeViewClock,
+        minutes: renderTimeViewClock,
+        seconds: renderTimeViewClock,
+      }}
       {...datePickerProps}
     />
   );

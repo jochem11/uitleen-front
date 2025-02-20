@@ -59,7 +59,7 @@ const Sidebar = () => {
               <ListItemIcon>
                 <EventNoteIcon />
               </ListItemIcon>
-              <ListItemText primary="Uitgiftes" />
+              <ListItemText primary="Uitgiften" />
             </ListItem>
           </ButtonBase>
         </List>

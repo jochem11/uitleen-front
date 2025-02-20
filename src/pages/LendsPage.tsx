@@ -55,7 +55,7 @@ const LendsPage = () => {
       <DataTable<GetLendsResponse>
         tableActions={<Button onClick={() => createLendDialogMethods.open()}>Maak uitgiften</Button>}
         columns={columns}
-        title="Uitleningen"
+        title="Uitgiften"
         url="lends/paged"
       />
       <WrappedCreateLendDialog />
