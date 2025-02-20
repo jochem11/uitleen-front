@@ -23,7 +23,7 @@ function AuthenticatedLayoutRoutes() {
 }
 
 //TODO: useAuth with check what routes to return
-function UnauthenticatedLayoutRoutes() {}
+// function UnauthenticatedLayoutRoutes() {}
 
 const Routes = () => {
   return <AuthenticatedLayoutRoutes />;
