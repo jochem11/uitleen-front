@@ -60,7 +60,7 @@ const DataTable = <T extends object>({
     <Paper>
       <Box px={2} display="flex" justifyContent="space-between" alignItems="center">
         {title && <h2 style={{ flex: 1 }}>{title}</h2>}
-        {tableActions} {/* Render the tableActions prop here */}
+        {tableActions}
       </Box>
       {error && <p style={{ color: "red" }}>Error: {error}</p>}
       <TableContainer>
